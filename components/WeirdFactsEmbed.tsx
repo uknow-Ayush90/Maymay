@@ -14,6 +14,7 @@ interface Fact {
   emoji: string;
   category: string;
   difficulty: Difficulty;
+  reveal?: { label: string; value: string };
 }
 
 const FACTS: Fact[] = [
@@ -22,7 +23,8 @@ const FACTS: Fact[] = [
     statement: "Python was named after Monty Python, not the snake.",
     options: ["True", "False"],
     answer: "True",
-    explanation: "Guido van Rossum was reading Monty Python's Flying Circus scripts while creating the language. The snake logo came later!",
+    explanation: "_____ was reading Monty Python's Flying Circus scripts while creating the language. The snake logo came later!",
+    reveal: { label: "Who created Python?", value: "Guido van Rossum" },
     emoji: "🐍",
     category: "Python",
     difficulty: "easy",
@@ -31,7 +33,8 @@ const FACTS: Fact[] = [
     statement: "In Python, `0.1 + 0.2 == 0.3` returns...",
     options: ["True", "False", "TypeError", "None"],
     answer: "False",
-    explanation: "Due to floating point precision, `0.1 + 0.2` is actually `0.30000000000000004`. Use `math.isclose()` instead!",
+    explanation: "Due to floating point precision, `0.1 + 0.2` is actually `_____`. Use `math.isclose()` instead!",
+    reveal: { label: "Actual value?", value: "0.30000000000000004" },
     emoji: "🤯",
     category: "Python",
     difficulty: "hard",
@@ -40,7 +43,8 @@ const FACTS: Fact[] = [
     statement: "Python's `is` operator checks value equality, just like `==`.",
     options: ["True", "False"],
     answer: "False",
-    explanation: "`is` checks identity (same object in memory), `==` checks value equality. `a = [1]; b = [1]; a == b` is True but `a is b` is False.",
+    explanation: "`is` checks identity (same object in memory), `==` checks value equality. `a = [1]; b = [1]; a == b` is True but `_____` is False.",
+    reveal: { label: "Identity check?", value: "a is b" },
     emoji: "🔍",
     category: "Python",
     difficulty: "medium",
@@ -49,7 +53,8 @@ const FACTS: Fact[] = [
     statement: "How many keywords does Python 3 have?",
     options: ["18", "35", "52", "12"],
     answer: "35",
-    explanation: "Python 3 has exactly 35 reserved keywords like `if`, `else`, `lambda`, `yield`, `async`, `await` etc. Quite few for a full language!",
+    explanation: "Python 3 has exactly _____ reserved keywords like `if`, `else`, `lambda`, `yield`, `async`, `await` etc. Quite few for a full language!",
+    reveal: { label: "Exact count?", value: "35 keywords" },
     emoji: "📚",
     category: "Python",
     difficulty: "hard",
@@ -58,7 +63,8 @@ const FACTS: Fact[] = [
     statement: "In Python, an empty list `[]` is falsy.",
     options: ["True", "False"],
     answer: "True",
-    explanation: "Empty sequences (list, tuple, string, dict, set) are all falsy in Python. `bool([])` returns `False`. This is very useful for condition checks!",
+    explanation: "Empty sequences (list, tuple, string, dict, set) are all falsy in Python. `_____` returns `False`. This is very useful for condition checks!",
+    reveal: { label: "What returns False?", value: "bool([])" },
     emoji: "📋",
     category: "Python",
     difficulty: "easy",
@@ -67,7 +73,8 @@ const FACTS: Fact[] = [
     statement: "Python's GIL (Global Interpreter Lock) allows true multi-threaded CPU parallelism.",
     options: ["True", "False"],
     answer: "False",
-    explanation: "The GIL prevents multiple threads from executing Python bytecode simultaneously. For CPU-bound tasks, use `multiprocessing` instead of `threading`!",
+    explanation: "The GIL prevents multiple threads from executing Python bytecode simultaneously. For CPU-bound tasks, use _____ instead of `threading`!",
+    reveal: { label: "What to use instead?", value: "multiprocessing" },
     emoji: "🔒",
     category: "Python",
     difficulty: "medium",
@@ -76,7 +83,8 @@ const FACTS: Fact[] = [
     statement: "Which Python version finally removed the GIL (experimentally)?",
     options: ["Python 3.9", "Python 3.12", "Python 3.13", "Python 4.0"],
     answer: "Python 3.13",
-    explanation: "Python 3.13 (released Oct 2024) introduced an experimental 'free-threaded' mode (--disable-gil) allowing true multi-core parallelism!",
+    explanation: "Python 3.13 introduced an experimental '_____' mode allowing true multi-core parallelism!",
+    reveal: { label: "The flag name?", value: "free-threaded / --disable-gil" },
     emoji: "🚀",
     category: "Python",
     difficulty: "hard",
@@ -87,7 +95,8 @@ const FACTS: Fact[] = [
     statement: "REST stands for Representational State Transfer.",
     options: ["True", "False"],
     answer: "True",
-    explanation: "Roy Fielding coined REST in his 2000 PhD dissertation. Most people use REST APIs daily without knowing what the acronym means!",
+    explanation: "_____ coined REST in his 2000 PhD dissertation. Most people use REST APIs daily without knowing what the acronym means!",
+    reveal: { label: "Who coined REST?", value: "Roy Fielding" },
     emoji: "🌐",
     category: "Architecture",
     difficulty: "easy",
@@ -96,7 +105,8 @@ const FACTS: Fact[] = [
     statement: "A monolith is always a bad architecture choice.",
     options: ["True", "False"],
     answer: "False",
-    explanation: "Monoliths are great for small teams and early-stage products. Even Shopify, Stack Overflow run on monoliths at massive scale. 'It depends' is the real answer!",
+    explanation: "Monoliths are great for small teams and early-stage products. Even _____ run on monoliths at massive scale. 'It depends' is the real answer!",
+    reveal: { label: "Famous monolith examples?", value: "Shopify & Stack Overflow" },
     emoji: "🏛️",
     category: "Architecture",
     difficulty: "easy",
@@ -105,7 +115,8 @@ const FACTS: Fact[] = [
     statement: "How many fallacies of distributed computing are there?",
     options: ["4", "6", "8", "12"],
     answer: "8",
-    explanation: "Peter Deutsch listed 8 fallacies: network is reliable, latency is zero, bandwidth is infinite, network is secure, topology doesn't change, there's one admin, transport cost is zero, network is homogeneous.",
+    explanation: "_____ listed 8 fallacies: network is reliable, latency is zero, bandwidth is infinite, network is secure, topology doesn't change, there's one admin, transport cost is zero, network is homogeneous.",
+    reveal: { label: "Who listed them?", value: "Peter Deutsch" },
     emoji: "☁️",
     category: "Architecture",
     difficulty: "hard",
@@ -114,7 +125,8 @@ const FACTS: Fact[] = [
     statement: "CQRS stands for Command Query Responsibility Segregation.",
     options: ["True", "False"],
     answer: "True",
-    explanation: "CQRS separates read (Query) and write (Command) operations. It's overkill for most apps but architects love mentioning it in diagrams!",
+    explanation: "CQRS separates read (_____) and write (_____) operations. It's overkill for most apps but architects love mentioning it in diagrams!",
+    reveal: { label: "Full form?", value: "Query = Read, Command = Write" },
     emoji: "📐",
     category: "Architecture",
     difficulty: "medium",
@@ -123,7 +135,8 @@ const FACTS: Fact[] = [
     statement: "CAP Theorem says a distributed system can guarantee all three: Consistency, Availability, Partition tolerance.",
     options: ["True", "False"],
     answer: "False",
-    explanation: "CAP Theorem (Brewer's Theorem) says you can only pick 2 of 3. In practice, partition tolerance is mandatory, so the real choice is CP vs AP!",
+    explanation: "_____ says you can only pick 2 of 3. In practice, partition tolerance is mandatory, so the real choice is CP vs AP!",
+    reveal: { label: "Who proposed it?", value: "Eric Brewer (Brewer's Theorem)" },
     emoji: "📊",
     category: "Architecture",
     difficulty: "medium",
@@ -137,7 +150,8 @@ const FACTS: Fact[] = [
       "It uses HTTP GET method",
     ],
     answer: "Calling it once or many times has same result",
-    explanation: "An idempotent operation produces the same result whether you call it once or 100 times. DELETE and PUT are idempotent, POST is not!",
+    explanation: "An idempotent operation produces the same result whether you call it once or 100 times. _____ and _____ are idempotent, POST is not!",
+    reveal: { label: "Idempotent HTTP methods?", value: "DELETE and PUT" },
     emoji: "🔄",
     category: "Architecture",
     difficulty: "medium",
@@ -146,7 +160,8 @@ const FACTS: Fact[] = [
     statement: "Event sourcing stores the current state of entities directly in the database.",
     options: ["True", "False"],
     answer: "False",
-    explanation: "Event sourcing stores a log of all events that led to the current state. Current state is derived by replaying events. Think of it like a bank statement vs account balance!",
+    explanation: "Event sourcing stores a log of all events that led to the current state. Think of it like a _____ vs account balance!",
+    reveal: { label: "Real-world analogy?", value: "Bank statement (transaction log)" },
     emoji: "📜",
     category: "Architecture",
     difficulty: "hard",
@@ -157,7 +172,8 @@ const FACTS: Fact[] = [
     statement: "In Scrum, the Product Owner can change sprint goals mid-sprint.",
     options: ["True", "False"],
     answer: "False",
-    explanation: "The Sprint Goal is fixed once the Sprint starts. Stakeholders can negotiate scope, but only the Development Team can add/remove work — and only with Scrum Master facilitation!",
+    explanation: "The Sprint Goal is fixed once the Sprint starts. Only the _____ can add/remove work — and only with Scrum Master facilitation!",
+    reveal: { label: "Who owns sprint scope?", value: "Development Team" },
     emoji: "🎯",
     category: "Scrum",
     difficulty: "medium",
@@ -166,7 +182,8 @@ const FACTS: Fact[] = [
     statement: "The Scrum Guide recommends Daily Scrum should be exactly 15 minutes.",
     options: ["True", "False"],
     answer: "True",
-    explanation: "The 2020 Scrum Guide explicitly says Daily Scrum is a 15-minute event. The 3 questions format (what I did, what I'll do, blockers) was removed in the 2020 update though!",
+    explanation: "The _____ Scrum Guide explicitly says Daily Scrum is a 15-minute event. The 3 questions format was removed in this update!",
+    reveal: { label: "Which edition?", value: "2020 Scrum Guide" },
     emoji: "⏱️",
     category: "Scrum",
     difficulty: "easy",
@@ -175,7 +192,8 @@ const FACTS: Fact[] = [
     statement: "A Sprint Retrospective is mandatory in Scrum.",
     options: ["True", "False"],
     answer: "True",
-    explanation: "Retro is one of 5 Scrum events (Sprint, Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective). Skipping it is not Scrum!",
+    explanation: "Retro is one of _____ Scrum events (Sprint, Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective). Skipping it is not Scrum!",
+    reveal: { label: "How many Scrum events total?", value: "5 events" },
     emoji: "🔁",
     category: "Scrum",
     difficulty: "easy",
@@ -184,7 +202,8 @@ const FACTS: Fact[] = [
     statement: "Story points measure how many hours a task will take.",
     options: ["True", "False"],
     answer: "False",
-    explanation: "Story points measure relative complexity/effort, NOT time. A 2-point story for a senior dev might take 1 hour; for a junior, 1 day. That's the point — it's effort, not duration!",
+    explanation: "Story points measure relative _____, NOT time. A 2-point story for a senior dev might take 1 hour; for a junior, 1 day. That's the point!",
+    reveal: { label: "What do points measure?", value: "Complexity / Effort" },
     emoji: "🃏",
     category: "Scrum",
     difficulty: "medium",
@@ -193,7 +212,8 @@ const FACTS: Fact[] = [
     statement: "In Scrum, who is responsible for removing impediments?",
     options: ["Product Owner", "Scrum Master", "Development Team", "Stakeholders"],
     answer: "Scrum Master",
-    explanation: "The Scrum Master is the 'servant leader' responsible for removing impediments and protecting the team from external distractions. Not the manager, not the PO!",
+    explanation: "The _____ is the 'servant leader' responsible for removing impediments and protecting the team from external distractions.",
+    reveal: { label: "Their Scrum role title?", value: "Scrum Master = Servant Leader" },
     emoji: "🛡️",
     category: "Scrum",
     difficulty: "easy",
@@ -202,7 +222,8 @@ const FACTS: Fact[] = [
     statement: "Velocity is a planning tool in Scrum used to predict future sprint capacity.",
     options: ["True", "False"],
     answer: "True",
-    explanation: "Velocity (avg story points per sprint) helps forecast how much work a team can take. But using it as a KPI or comparing teams is an anti-pattern!",
+    explanation: "Velocity (avg story points per sprint) helps forecast sprint capacity. But using it as a _____ or comparing teams is an anti-pattern!",
+    reveal: { label: "Common misuse?", value: "KPI / performance metric" },
     emoji: "📈",
     category: "Scrum",
     difficulty: "medium",
@@ -213,7 +234,8 @@ const FACTS: Fact[] = [
     statement: "The first computer bug was an actual bug (insect).",
     options: ["True", "False"],
     answer: "True",
-    explanation: "In 1947, Grace Hopper's team found an actual moth stuck in a relay of the Harvard Mark II computer. They taped it in the logbook with the note 'First actual case of bug being found'!",
+    explanation: "In 1947, _____'s team found an actual moth stuck in a relay of the Harvard Mark II computer. They taped it in the logbook!",
+    reveal: { label: "Who found the bug?", value: "Grace Hopper" },
     emoji: "🦗",
     category: "Tech Trivia",
     difficulty: "easy",
@@ -222,7 +244,8 @@ const FACTS: Fact[] = [
     statement: "Git was created by Linus Torvalds in just 10 days.",
     options: ["True", "False"],
     answer: "True",
-    explanation: "After a fallout with BitKeeper in 2005, Linus Torvalds wrote the first version of Git in about 10 days. The first commit message was literally 'Initial revision of git, the information manager from hell'!",
+    explanation: "After a fallout with _____ in 2005, Linus Torvalds wrote the first version of Git in about 10 days.",
+    reveal: { label: "Previous VCS they used?", value: "BitKeeper" },
     emoji: "🐧",
     category: "Tech Trivia",
     difficulty: "medium",
@@ -231,7 +254,8 @@ const FACTS: Fact[] = [
     statement: "The average developer Googles 'how to center a div' how many times per year?",
     options: ["~50 times", "~100 times", "~200 times", "Only once, they memorized it"],
     answer: "~100 times",
-    explanation: "'how to center a div' is consistently one of the most searched CSS queries globally, year after year. You're not alone!",
+    explanation: "'_____' is consistently one of the most searched CSS queries globally, year after year. You're not alone!",
+    reveal: { label: "The eternal question?", value: "how to center a div" },
     emoji: "🎨",
     category: "Tech Trivia",
     difficulty: "easy",
@@ -240,7 +264,8 @@ const FACTS: Fact[] = [
     statement: "SOLID stands for 5 object-oriented design principles. What does the 'L' stand for?",
     options: ["Loose coupling", "Liskov Substitution", "Lazy loading", "Linear dependency"],
     answer: "Liskov Substitution",
-    explanation: "SOLID = Single responsibility, Open/closed, Liskov substitution, Interface segregation, Dependency inversion. Barbara Liskov defined: objects of a superclass should be replaceable with objects of subclasses without breaking the app.",
+    explanation: "SOLID = Single responsibility, Open/closed, _____ substitution, Interface segregation, Dependency inversion.",
+    reveal: { label: "Who is Liskov?", value: "Barbara Liskov — MIT computer scientist" },
     emoji: "🏗️",
     category: "Tech Trivia",
     difficulty: "medium",
@@ -249,7 +274,8 @@ const FACTS: Fact[] = [
     statement: "SQL stands for Structured Query Language.",
     options: ["True", "False"],
     answer: "True",
-    explanation: "SQL was originally called SEQUEL (Structured English Query Language) but was shortened to SQL due to a trademark dispute. IBM invented it in the 1970s!",
+    explanation: "SQL was originally called _____ but was shortened due to a trademark dispute. IBM invented it in the 1970s!",
+    reveal: { label: "Original full name?", value: "SEQUEL — Structured English Query Language" },
     emoji: "🗄️",
     category: "Tech Trivia",
     difficulty: "easy",
@@ -280,12 +306,23 @@ export default function WeirdFactsEmbed() {
   const [score, setScore] = useState(0);
   const [total, setTotal] = useState(0);
   const [answered, setAnswered] = useState<Set<number>>(new Set());
+  const [revealed, setRevealed] = useState<Set<number>>(new Set());
 
   const filtered = FACTS.filter((f) => filter === "all" || f.category === filter);
   const current = filtered[currentIndex];
   const hasAnswered = answered.has(currentIndex);
   const isCorrect = selected === current?.answer;
   const isLast = currentIndex === filtered.length - 1;
+  const isRevealed = revealed.has(currentIndex);
+
+  const toggleReveal = useCallback(() => {
+    setRevealed((prev) => {
+      const next = new Set(prev);
+      if (next.has(currentIndex)) next.delete(currentIndex);
+      else next.add(currentIndex);
+      return next;
+    });
+  }, [currentIndex]);
 
   const handleGuess = useCallback(
     (option: string) => {
@@ -314,6 +351,7 @@ export default function WeirdFactsEmbed() {
     setScore(0);
     setTotal(0);
     setAnswered(new Set());
+    setRevealed(new Set());
   }, []);
 
   const accuracy = total > 0 ? Math.round((score / total) * 100) : 0;
@@ -452,7 +490,30 @@ export default function WeirdFactsEmbed() {
             )}>
               <span className="font-bold mr-1">{isCorrect ? "🎉 Correct!" : "💡 The answer is:"}</span>
               {!isCorrect && <span className="font-semibold text-green-300">{current.answer}. </span>}
-              {current.explanation}
+              {current.explanation.split("_____").map((part, i, arr) =>
+                i < arr.length - 1 ? (
+                  <span key={i}>
+                    {part}
+                    <span className="inline-flex items-center mx-0.5 align-middle">
+                      <span className="text-xs text-[#9ca3af] mr-1">{current.reveal?.label}</span>
+                      <button
+                        onClick={toggleReveal}
+                        className={cn(
+                          "inline-block px-2 py-0.5 rounded text-xs font-bold transition-all border",
+                          isRevealed
+                            ? "bg-[#7c3aed]/20 border-[#7c3aed] text-[#c4b5fd]"
+                            : "bg-[#222] border-[#444] text-transparent select-none blur-[3px] hover:blur-[2px]"
+                        )}
+                        title={isRevealed ? "Click to hide" : "Click to reveal"}
+                      >
+                        {current.reveal?.value ?? "???"}
+                      </button>
+                    </span>
+                  </span>
+                ) : (
+                  <span key={i}>{part}</span>
+                )
+              )}
             </div>
           )}
 
