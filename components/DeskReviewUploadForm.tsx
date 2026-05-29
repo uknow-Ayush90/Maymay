@@ -195,7 +195,7 @@ export default function DeskReviewUploadForm() {
 
       <button
         type="submit"
-        disabled={uploading || !file || !title.trim()}
+        disabled={uploading}
         className="w-full flex items-center justify-center gap-3 bg-[#7c3aed] hover:bg-[#8b5cf6] disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-xl transition-colors text-base"
       >
         {uploading ? (
