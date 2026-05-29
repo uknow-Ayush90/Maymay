@@ -14,6 +14,7 @@ function UploadPageContent() {
   const isDeskReview = type === "desk";
 
   return (
+    <div className="h-[calc(100vh-64px)] overflow-y-auto">
     <div className="max-w-2xl mx-auto px-4 py-8 space-y-6">
       <div className="flex items-center gap-3">
         <div className="w-12 h-12 bg-[#7c3aed]/20 rounded-2xl flex items-center justify-center">
@@ -64,6 +65,7 @@ function UploadPageContent() {
       </div>
 
       {isDeskReview ? <DeskReviewUploadForm /> : <UploadForm />}
+    </div>
     </div>
   );
 }
