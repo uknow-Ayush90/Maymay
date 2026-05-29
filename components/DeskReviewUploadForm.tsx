@@ -90,7 +90,7 @@ export default function DeskReviewUploadForm() {
       const review = await reviewRes.json();
 
       toast.success("Desk setup upload ho gaya! 🖥️");
-      router.push(`/desk-review/${review.id}`);
+      router.push(`/?tab=desk`);
     } catch {
       toast.error("Upload fail ho gaya, try again!");
     } finally {
